@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --green: #27d738;
+}
+
+html,body {
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.logo-space {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.logo-space .fa-whatsapp {
+    font-size: 2.4rem;
+    color: var(--green);
+}
+.logo-space p{
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.nav-link-space {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--green);
+    transition: .7s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: fit-content;
+    padding: 15px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    background-color: var(--green);
+    color: #000;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+}.nav-btn:after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #000;
+    transform: translateY(90%);
+    transition: 1s;
+}
+
+.nav-btn:hover::after {
+    transform: translateY(0%);
+}
+
+.nav-btn :where(p,.fa-download) {
+    position: relative;
+    z-index: 10;
+    transition: 1s;
+}
+
+.nav-btn:hover :where(p,.fa-download){
+    color: white;
+}
+
+
+nav .fa-bars {
+    display: none;
+}
+
+.ham-menu {
+     display: none;   
+} 
+
+@media (max-width:1250px) {
+    .nav-links {
+        display: block;
+    }
+
+    .nav-btn {
+        padding: 13px;
+        border-radius: 50%;
+    }
+    .nav-btn p {
+        display: none;
+    }
+
+    nav .fa-bars {
+        display: block;
+    }
+
+    .ham-menu {
+        display: block;
+        position: fixed;
+        top: 0px;
+        background-color: rgb(188, 20, 20);
+        z-index: 10;
+        min-height: 80vh;
+        width: 100%;
+        transform: translateX(100%);
+        transition: .5s;
+    }
+
+    .ham-menu.active {
+        transform: translateX(0%);
+    }
+
+    .ham-menu-subheading {
+        display:flex;
+        align-items: center;
+        gap: 40%;
+        padding: 20px 30px;
+        border-bottom: 2px solid grey;
+    }
+
+    .hammenu-links {
+        width: 100%;
+    }
+
+    .hammenu-links a {
+        display: block;
+        font-size: 2rem;
+        padding: 22px 20px;
+        text-decoration: none;
+        color: #000;
+        border-bottom: 1px solid grey;
+    }
+}
+
+@media (max-width: 500px) {
+    nav {
+        padding: 10px 20px;
+   }
+}
